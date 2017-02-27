@@ -7,6 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class Post extends Model
 {
     //
+    	 protected $fillable = [
+        'title', 'body', 'user_id', 'subreddit_id'
+    ];
 
 	public function user(){
 		return $this->hasOne('App\User');
