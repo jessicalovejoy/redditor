@@ -14,7 +14,7 @@ class SubredditController extends Controller
      */
     public function index()
     {
-        //
+        
     }
 
     /**
