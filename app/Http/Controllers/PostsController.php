@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Post;
 use Illuminate\Http\Request;
 
 class PostsController extends Controller
@@ -11,9 +12,14 @@ class PostsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    // Index method is used for frontpage 
+
     public function index()
     {
-        //
+        $posts = Post::all();
+        
+        return view('welcome', compact('posts'));
     }
 
     /**

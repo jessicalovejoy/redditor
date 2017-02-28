@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Subreddit;
 
 class SubredditController extends Controller
 {
@@ -43,9 +44,10 @@ class SubredditController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($subreddit_name)
     {
-        //
+
+
     }
 
     /**
@@ -56,7 +58,10 @@ class SubredditController extends Controller
      */
     public function edit($id)
     {
-        //
+        
+        
+
+
     }
 
     /**

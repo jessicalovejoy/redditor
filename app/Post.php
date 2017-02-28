@@ -19,4 +19,8 @@ class Post extends Model
 		return $this->hasMany('App\Comment');
 	}
 
+	public function subreddit(){
+		return $this->hasOne('App\Subreddit', 'foreign_key');
+	}
+
 }
