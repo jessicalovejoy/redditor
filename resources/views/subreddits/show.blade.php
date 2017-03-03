@@ -3,7 +3,7 @@
 
 @section('content')
 
-
+{{$subreddit_name}}
 
 
 

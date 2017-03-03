@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Subreddit;
+use Auth;
 
 class SubredditController extends Controller
 {
@@ -24,7 +25,7 @@ class SubredditController extends Controller
      */
     public function create()
     {
-        //
+        return view('subreddits.create');
     }
 
     /**
@@ -35,7 +36,13 @@ class SubredditController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $subreddit = new Subreddit; 
+        $subreddit->name = strtolower($request->name); 
+        $subreddit->description = $request->description;
+        $subreddit->user_id = Auth::id();  
+        $subreddit->save();
+
+        return redirect()->action('HomeController@index')->with('status', 'Subreddit Created!');
     }
 
     /**
@@ -46,7 +53,15 @@ class SubredditController extends Controller
      */
     public function show($subreddit_name)
     {
+        $subreddit = Subreddit::where('name', $subreddit_name)->get();
+       
+         if($subreddit->isEmpty()){
 
+            return view('subreddits.notfound', compact('subreddit_name'));
+        }
+
+
+        return view('subreddits.show', compact('subreddit'));
 
     }
 

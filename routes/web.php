@@ -16,13 +16,13 @@
 Auth::routes();
 
 Route::get('/', 'PostsController@index');
-
+Route::get('/home', 'HomeController@index');
 
 // Subreddit routes
-Route::get('/subreddits' 'SubredditController@index');
+Route::get('/subreddits', 'SubredditController@index');
 Route::get('/r/{subreddit_name}', 'SubredditController@show');
-Route::get('/r/subreddit/new', 'SubredditController@create');
-Route::post('/r/subreddit/new', 'SubredditController@store');
+Route::get('/subreddit/new', 'SubredditController@create');
+Route::post('subreddit/new', 'SubredditController@store');
 Route::get('/r/{subreddit_name}/edit', 'SubredditController@update');
 Route::post('/r/{subreddit_name}/edit', 'SubredditController@store');
 Route::post('/r/{subreddit_name}/delete', 'SubredditController@destroy');

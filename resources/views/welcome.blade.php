@@ -10,7 +10,7 @@
    
 
     
-   <p>{{$post->user_id}}</p></br>
+   <p>{{$post->user->name}}</p></br>
 
    
 
